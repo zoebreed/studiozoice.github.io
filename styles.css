@@ -5,7 +5,7 @@ body {
     font-family: 'Comfortaa', cursive;
     background-color: #121212;
     color: #ffffff;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -53,8 +53,12 @@ nav ul li a:hover {
 main {
     padding: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh; /* Ensure minimum height to prevent content cutoff */
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
 }
 
 .collage {
@@ -84,42 +88,32 @@ main {
 }
 
 .centered-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 72px;
     font-weight: 700;
     color: #ffffff;
     text-shadow: 0 0 20px rgba(0, 0, 255, 0.7), 0 0 30px rgba(0, 0, 255, 0.5);
-    pointer-events: none; /* Ensures the text doesn't interfere with image interactions */
+    margin-bottom: 50px; /* Add space below for better readability */
 }
 
 /* About page specific styles */
 .centered-about-text {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 48px;
     font-weight: 700;
     color: #ffffff;
     text-shadow: 0 0 20px rgba(0, 0, 255, 0.7), 0 0 30px rgba(0, 0, 255, 0.5);
-    pointer-events: none;
     text-align: center;
+    margin-bottom: 30px; /* Add space below for better readability */
 }
 
 .about-content {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, 0);
     max-width: 800px;
     text-align: center;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     background-color: rgba(28, 28, 28, 0.8);
+    overflow: auto; /* Enable scrolling for content longer than container */
+    margin: 0 20px; /* Add horizontal margin for better spacing */
 }
 
 .about-content p {
@@ -129,10 +123,11 @@ main {
 
 a {
     color: #ffffff;
-    text-shadow: 0 0 7px rgba(251, 255, 0, 0.5);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
     text-decoration: none;
 }
 
 a:visited {
     color: #ffffff;
 }
+
